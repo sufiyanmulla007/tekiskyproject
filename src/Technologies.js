@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+// import AccessTimeIcon from '@mui/icons-material/AccessTime';
 const Technologies = () => {
   return (
     <>
@@ -42,8 +42,10 @@ perfect sequence to maximise your learninig expericece.
              <img src="images/crud.svg" style={{ maxWidth: 400 }} alt="pic"/>
             </div>
             {/* <div className='card'>
+              <div className='cardbody'>
               <p>full stack</p>
               <h2>MERN Full Stack web development</h2>
+              </div>
               <hr/>
               <div><AccessTimeIcon/>170+Hour</div>
             </div> */}
@@ -67,8 +69,11 @@ const Wrapper = styled.section`
       width:50%;
       margin-left:3rem;
       margin-top:3rem;
-     
-    }
+      // background-color: #11f9fc;
+     }
+     .cardbody{
+      background-color: #11f9fc;
+     }
     p {
       margin: 1rem 0;
     }

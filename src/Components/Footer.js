@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
@@ -51,7 +51,7 @@ const Footer = () => {
                   <a
                     href="https://www.google.co.in/"
                     target="_blank">
-                    <FaYoutube className="icons" />
+                    <FaLinkedin className="icons" />
                   </a>
                 </div>
               </div>

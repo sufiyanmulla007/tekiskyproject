@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 const Services = () => {
   return (
-    <Wrapper>
+    <Wrapper style={{paddingTop:"2rem"}}>
       {/* card s */}
       <div className='about-body'>
       <div className='about-head'>
