@@ -10,7 +10,23 @@ const [employee,setEmployee]=useState("");
 const [batch,setBatch]=useState("");
 const [fess,setFess]=useState("");
 const [mob,setMob]=useState("");
-
+const [course,setCourse]= useState("");
+const [joining,setJoining]= useState("");
+const [card,setCard]=useState("");
+const [trainer,setTrainer]=useState("");
+const [clang,setClang]=useState("");
+const [cl,setCl]=useState("");
+const [cla,setCla]=useState("");
+const [ins,setIns]=useState("");
+const [inst,setInst]=useState("");
+const [rec,setRec]=useState("");
+const [recp,setRecp]=useState("");
+const [add,setAdd]=useState("");
+const [rep,setRep]=useState("");
+const [tfee,setTfee]=useState("");
+const [bfee,setBfee]=useState("");
+const [rema,setRema]=useState("");
+const [sta,setSta]=useState("");
 const history=useNavigate();
 
 const handlesubmit =(e)=>{
@@ -23,6 +39,17 @@ const handlesubmit =(e)=>{
     batch:batch,
     fess:fess,
     mob:mob,
+    course:course,
+    joining:joining,
+    card:card,
+    trainer:trainer,
+   clang:clang,
+   cl:cl,
+   cla:cla,
+   ins:ins,inst:inst,rec:rec,recp:recp,
+   add:add,rep:rep,
+   tfee:tfee,bfee:bfee,
+   rema:rema,sta:sta,
   })
   .then(() => {
     history("/read");
@@ -41,18 +68,18 @@ const handlesubmit =(e)=>{
             </div>
             <Form>
               <Form.Group className="mb-3" >
-              <input type="text" name='name' className="form-control" placeholder="name"
+              <input type="text" name='name' className="form-control" placeholder="Full Name"
               onChange={(e)=>setName(e.target.value)}
               />
               </Form.Group>
 
             <Form.Group className="mb-3" >
-            <input type="text" name='email' className="form-control" placeholder="email"
+            <input type="text" name='email' className="form-control" placeholder="Email Id"
             onChange={(e)=>setEmail(e.target.value)}
             />
             </Form.Group>
             <Form.Group className="mb-3" >
-            <input type="text" name='employee' className="form-control" placeholder="employee No"
+            <input type="text" name='employee' className="form-control" placeholder="Employee No"
             onChange={(e)=>setEmployee(e.target.value)}
             />
             </Form.Group>
@@ -62,7 +89,7 @@ const handlesubmit =(e)=>{
             />
             </Form.Group>
             <Form.Group className="mb-3" >
-            <input type="text" name='fess' className="form-control" placeholder="fees"
+            <input type="text" name='fess' className="form-control" placeholder="Fees"
             onChange={(e)=>setFess(e.target.value)}
             />
             </Form.Group>
@@ -71,7 +98,108 @@ const handlesubmit =(e)=>{
             onChange={(e)=>setMob(e.target.value)}
             />
             </Form.Group>
-              
+            <Form.Group className="mb-3" >
+              <input type="text" name='course' className="form-control" placeholder="Course/Designation"
+              value={course}
+              onChange={(e)=>setCourse(e.target.value)}
+              />
+              </Form.Group>
+              <Form.Group className="mb-3" >
+              <input type="date" name='joining' className="form-control" placeholder="joining date"
+              value={joining}
+              onChange={(e)=>setJoining(e.target.value)}
+              />
+              </Form.Group>
+              <Form.Group className="mb-3" >
+              <input type="text" name='card' className="form-control" placeholder="Id Card Issue"
+              value={card}
+              onChange={(e)=>setCard(e.target.value)}
+              />
+              </Form.Group>
+              <Form.Group className="mb-3" >
+            <input type="text" name='trainer' className="form-control" placeholder="Trainer"
+            value={trainer}
+            onChange={(e)=>setTrainer(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='clang' className="form-control" placeholder="Frist Language"
+            value={clang}
+            onChange={(e)=>setClang(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='cl' className="form-control" placeholder="Second Language"
+            value={cl}
+            onChange={(e)=>setCl(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='cla' className="form-control" placeholder="Third Language"
+            value={cla}
+            onChange={(e)=>setCla(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='ins' className="form-control" placeholder="Frist installment"
+            value={ins}
+            onChange={(e)=>setIns(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='inst' className="form-control" placeholder="Second installment"
+            value={inst}
+            onChange={(e)=>setInst(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='rec' className="form-control" placeholder="Third installment"
+            value={rec}
+            onChange={(e)=>setRec(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='recp' className="form-control" placeholder="Fourth installment"
+            value={recp}
+            onChange={(e)=>setRecp(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='add' className="form-control" placeholder="Address"
+            value={add}
+            onChange={(e)=>setAdd(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='rep' className="form-control" placeholder="Repeat"
+            value={rep}
+            onChange={(e)=>setRep(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='tfee' className="form-control" placeholder="Total Fees"
+            value={tfee}
+            onChange={(e)=>setTfee(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='bfee' className="form-control" placeholder="Balance Fees"
+            value={bfee}
+            onChange={(e)=>setBfee(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='rema' className="form-control" placeholder="Remark"
+            value={rema}
+            onChange={(e)=>setRema(e.target.value)}
+            />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+            <input type="text" name='sta' className="form-control" placeholder="Status"
+            value={sta}
+            onChange={(e)=>setSta(e.target.value)}
+            />
+            </Form.Group>
               <Button variant="primary" type="submit" className='col-lg-10' style={{height:"3rem",fontSize:"2rem",background: "rgb(67, 185, 127)"}}
               onClick={handlesubmit}
               >

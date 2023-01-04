@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import Table from 'react-bootstrap/Table';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Tooltip from '@mui/material/Tooltip';
+import {BiShowAlt} from 'react-icons/bi';
 import { Button } from '../styles/Button';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -28,7 +30,10 @@ axios.delete(`https://63a7f25df4962215b5784e6d.mockapi.io/tekisky-student/${id}`
 });
 }
 //edit function
-const setToLocalStorage=(id,name,email,employee,batch,fess,mob)=>{
+const setToLocalStorage=(id,name,email,employee,batch,fess,mob,course,
+  joining,card,trainer,clang,cl,cla,ins,inst,rec,recp,add,rep,
+  tfee,bfee,rema,sta,
+  )=>{
 localStorage.setItem("id",id);
 localStorage.setItem("name",name);
 localStorage.setItem("email",email);
@@ -36,6 +41,18 @@ localStorage.setItem("employee",employee);
 localStorage.setItem("batch",batch);
 localStorage.setItem("fess",fess);
 localStorage.setItem("mob",mob);
+localStorage.setItem("course",course);
+localStorage.setItem("joining",joining);
+localStorage.setItem("card",card);
+localStorage.setItem("trainer",trainer);
+localStorage.setItem("clang",clang);
+localStorage.setItem("cl",cl);
+localStorage.setItem("cla",cla);
+localStorage.setItem("ins",ins);localStorage.setItem("inst",inst);
+localStorage.setItem("rec",rec);localStorage.setItem("recp",recp);
+localStorage.setItem("add",add);localStorage.setItem("rep",rep);
+localStorage.setItem("tfee",tfee);localStorage.setItem("bfee",bfee);
+localStorage.setItem("rema",rema);localStorage.setItem("sta",sta);
 };
 
 useEffect(()=>{
@@ -48,6 +65,7 @@ const inputhandel=(e)=>{
 }
   return (
     <>
+    <Wrapper>
     <div className="form-check form-switch">
         <input
           className="form-check-input"
@@ -72,15 +90,16 @@ const inputhandel=(e)=>{
      <Table className={`table ${tabledark}`}>
      <thead>
           <tr>
-            <th scope="col" style={{fontSize:"15px"}}>#</th>
+            <th scope="col" style={{fontSize:"15px"}}>SR.No</th>
             <th scope="col"style={{fontSize:"15px"}}>Name</th>
             <th scope="col"style={{fontSize:"15px"}}>Email</th>
-            <th scope="col"style={{fontSize:"15px"}}>employee</th>
-            <th scope="col"style={{fontSize:"15px"}}>batch</th>
-            <th scope="col"style={{fontSize:"15px"}}>fees</th>
-            <th scope="col"style={{fontSize:"15px"}}>mobile</th>
-            
-          </tr>
+            <th scope="col"style={{fontSize:"15px"}}>Employee Id</th>
+            <th scope="col"style={{fontSize:"15px"}}>Batch NO</th>
+            <th scope="col"style={{fontSize:"15px"}}>Fees</th>
+            <th scope="col"style={{fontSize:"15px"}}>Mobile</th>
+            {/* <th scope="col"></th>
+            <th scope="col"></th> */}
+             </tr>
         </thead>
         {
          data.filter((el)=>{
@@ -92,12 +111,12 @@ const inputhandel=(e)=>{
           );
 
          }
-         }).map((eachData)=>{
+         }).map((eachData,item)=>{
          return (
             <>
             <tbody>
-        <tr>
-          <td style={{fontSize:"17px"}}>{eachData.id}</td>
+        <tr key={item}>
+          <td style={{fontSize:"17px"}}>{item+1}</td>
           <td style={{fontSize:"17px"}}>{eachData.name}</td>
           <td style={{fontSize:"17px"}}>{eachData.email}</td>
           <td style={{fontSize:"17px"}}>{eachData.employee}</td>
@@ -107,7 +126,7 @@ const inputhandel=(e)=>{
           <td>
         <Link to="/update">
         <Tooltip title="Edit">
-         <EditIcon 
+         <EditIcon className='icon'
          onClick={()=>setToLocalStorage(
             eachData.id,
             eachData.name,
@@ -116,17 +135,58 @@ const inputhandel=(e)=>{
             eachData.batch,
             eachData.fess,
             eachData.mob,
+            eachData.course,
+            eachData.joining,
+            eachData.card,
+            eachData.trainer,
+            eachData.clang,
+            eachData.cl,
+            eachData.cla,
+            eachData.ins,eachData.inst,
+            eachData.rec,eachData.recp,
+            eachData.add,eachData.rep,
+            eachData.tfee,eachData.bfee,
+            eachData.rema,eachData.sta,
          )}
-         style={{ color: "red", cursor: "pointer", fontSize:"2.5rem"}}/>
+         />
          </Tooltip>
          </Link>
           </td>
           <td>
         <Tooltip title="Delete">
-        <DeleteIcon 
+        <DeleteIcon className='icon'
         onClick={()=>handleDelete(eachData.id)}
-        style={{ color: "red", cursor: "pointer", fontSize:"2.5rem" }}/>
+        />
         </Tooltip>
+            </td>
+            <td>
+            <Link to="/ShowData">
+            
+            <BiShowAlt className='icon'
+            onClick={()=>setToLocalStorage(
+              eachData.id,
+              eachData.name,
+              eachData.email,
+              eachData.employee,
+              eachData.batch,
+              eachData.fess,
+              eachData.mob,
+              eachData.course,
+              eachData.joining,
+              eachData.card,
+              eachData.trainer,
+              eachData.clang,
+              eachData.cl,
+              eachData.cla,
+              eachData.ins,eachData.inst,
+              eachData.rec,eachData.recp,
+              eachData.add,eachData.rep,
+              eachData.tfee,eachData.bfee,
+              eachData.rema,eachData.sta,
+           )}
+            />
+            
+            </Link>
             </td>
         </tr>
         
@@ -137,8 +197,17 @@ const inputhandel=(e)=>{
       
       }
     </Table>
+    </Wrapper>
     </>
   );
 };
-
+const Wrapper = styled.section`
+.icon{
+  color:red;
+  cursor:pointer;
+  font-size: 2.5rem;
+  // border: 1px solid black;
+  // background-color: black;
+}
+`;
 export default Read;

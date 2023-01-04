@@ -16,6 +16,7 @@ import Create from "./Admin/Create";
 import Read from "./Admin/Read";
 import Update from "./Admin/Update";
 import RegStudent from "./Registration/RegStudent";
+import ShowData from "./Admin/ShowData";
 function App() {
 const theme = {
     colors: {
@@ -57,6 +58,7 @@ const theme = {
     <Route path="/Create" element={<Create/>}/>
     <Route path="/read" element={<Read/>}/>
     <Route path="/update" element={<Update/>}/>
+    <Route path="/ShowData" element={<ShowData/>}/>
     <Route path="*" element={<Errors/>}/>
     </Routes>
     <Footer/>

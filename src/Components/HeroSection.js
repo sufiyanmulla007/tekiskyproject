@@ -24,7 +24,7 @@ const { name } = myData;
           <div className="hero-section-image">
             <figure>
               <img
-                src="images/hero-img.svg"
+                src="images/homepic 1.png"
                 alt="hero-section-photo"
                 className="img-style"
               />
